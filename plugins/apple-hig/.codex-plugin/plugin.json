@@ -1,0 +1,27 @@
+{
+  "name": "apple-hig",
+  "version": "1.0.0",
+  "description": "Apple Human Interface Guidelines guidance for Codex: native Apple-platform UX, accessibility, and cross-device adaptation.",
+  "author": {
+    "name": "ksanbal + Hermes Agent"
+  },
+  "homepage": "https://developer.apple.com/kr/design/human-interface-guidelines/",
+  "license": "CC-BY-4.0",
+  "keywords": ["apple", "hig", "ios", "ipados", "macos", "watchos", "tvos", "visionos", "design", "accessibility", "swiftui"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Apple HIG",
+    "shortDescription": "Apple-native design guidance for Codex",
+    "longDescription": "A portable Codex plugin containing an Apple Human Interface Guidelines skill for design review, SwiftUI implementation, accessibility, and cross-device adaptation.",
+    "developerName": "ksanbal + Hermes Agent",
+    "category": "Design",
+    "capabilities": ["Interactive", "Write"],
+    "websiteURL": "https://developer.apple.com/kr/design/human-interface-guidelines/",
+    "defaultPrompt": [
+      "Review this app for Apple HIG alignment",
+      "Make this SwiftUI screen feel native on iOS and iPadOS",
+      "Create a cross-device Apple platform design checklist"
+    ],
+    "brandColor": "#007AFF"
+  }
+}

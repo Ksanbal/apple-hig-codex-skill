@@ -1,0 +1,20 @@
+{
+  "name": "local-apple-design-skills",
+  "interface": {
+    "displayName": "Local Apple Design Skills"
+  },
+  "plugins": [
+    {
+      "name": "apple-hig",
+      "source": {
+        "source": "local",
+        "path": "./plugins/apple-hig"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Design"
+    }
+  ]
+}
