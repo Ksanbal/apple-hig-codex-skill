@@ -1,6 +1,6 @@
 ---
 name: apple-human-interface-guidelines
-description: Use when designing, reviewing, or implementing apps for Apple platforms (iOS, iPadOS, macOS, watchOS, tvOS, visionOS) and you need Human Interface Guidelines-aligned UX decisions, cross-device adaptation, accessibility, visual hierarchy, or Apple-native interaction patterns.
+description: Use for any design, UI, or UX work on Apple-platform products, including visual design, interaction design, layout, navigation, accessibility, design review, and implementation decisions that should align with Apple Human Interface Guidelines.
 version: 1.0.0
 author: Ksanbal
 license: CC-BY-4.0
@@ -34,6 +34,24 @@ metadata:
     - "\\bnpm\\s+(run\\s+)?(ios|macos|build)\\b"
   promptSignals:
     phrases:
+      - "design"
+      - "디자인"
+      - "UI"
+      - "UX"
+      - "interface"
+      - "인터페이스"
+      - "user experience"
+      - "사용자 경험"
+      - "layout"
+      - "레이아웃"
+      - "interaction"
+      - "인터랙션"
+      - "navigation"
+      - "내비게이션"
+      - "component"
+      - "컴포넌트"
+      - "screen design"
+      - "화면 설계"
       - "Apple HIG"
       - "Human Interface Guidelines"
       - "휴먼 인터페이스 가이드라인"
@@ -68,7 +86,7 @@ metadata:
 
 ## Overview
 
-Use this skill whenever you design, critique, or implement an interface intended to feel native on Apple platforms. It is a compact operating guide derived from Apple’s Human Interface Guidelines (HIG), not a replacement for the official documentation. When precision matters, check the current Apple docs and platform SDK documentation.
+Use this skill whenever a task involves design, UI, or UX for an Apple-platform product, even if the user does not explicitly mention Apple HIG. Apply it when designing, critiquing, or implementing an interface intended to feel native on Apple platforms. It is a compact operating guide derived from Apple’s Human Interface Guidelines (HIG), not a replacement for the official documentation. When precision matters, check the current Apple docs and platform SDK documentation.
 
 Primary source: https://developer.apple.com/kr/design/human-interface-guidelines/
 

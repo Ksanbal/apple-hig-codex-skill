@@ -1,7 +1,7 @@
 {
   "name": "apple-hig",
   "version": "1.1.0",
-  "description": "Apple Human Interface Guidelines guidance for Codex: native Apple-platform UX, accessibility, and cross-device adaptation.",
+  "description": "Apple Human Interface Guidelines guidance for design, UI, and UX work on Apple-platform products.",
   "author": {
     "name": "Ksanbal"
   },
@@ -11,8 +11,8 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Apple HIG",
-    "shortDescription": "Apple-native design guidance for Codex",
-    "longDescription": "A portable Apple Human Interface Guidelines skill for Codex, Claude Code, and OpenCode. Use it for design review, SwiftUI implementation, accessibility, and cross-device adaptation.",
+    "shortDescription": "Apple-native design, UI, and UX guidance",
+    "longDescription": "A portable Apple Human Interface Guidelines skill for Codex, Claude Code, and OpenCode. Use it for any Apple-platform design, UI, or UX work, including design review, SwiftUI implementation, accessibility, and cross-device adaptation.",
     "developerName": "Ksanbal",
     "category": "Design",
     "capabilities": ["Interactive", "Write"],
