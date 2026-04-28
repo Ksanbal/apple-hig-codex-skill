@@ -1,13 +1,13 @@
 # Contributing
 
-이 저장소는 Codex/Hermes에서 재사용할 수 있는 Apple HIG skill pack입니다.
+이 저장소는 Codex, Claude Code, OpenCode에서 재사용할 수 있는 Apple HIG skill pack입니다.
 
 ## 수정 절차
 
 1. `plugins/apple-hig/skills/apple-human-interface-guidelines/SKILL.md`를 수정합니다.
 2. JSON manifest가 깨지지 않았는지 확인합니다.
-3. `./install.sh`를 실행해 로컬 Codex/Hermes 설치를 갱신합니다.
-4. 새 Codex/Hermes 세션에서 skill을 테스트합니다.
+3. `./install.sh`를 실행해 로컬 Codex/Claude Code/OpenCode 설치를 갱신합니다.
+4. 새 Codex/Claude Code/OpenCode 세션에서 skill을 테스트합니다.
 
 ## 주의
 

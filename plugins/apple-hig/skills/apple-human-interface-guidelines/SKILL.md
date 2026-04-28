@@ -2,7 +2,7 @@
 name: apple-human-interface-guidelines
 description: Use when designing, reviewing, or implementing apps for Apple platforms (iOS, iPadOS, macOS, watchOS, tvOS, visionOS) and you need Human Interface Guidelines-aligned UX decisions, cross-device adaptation, accessibility, visual hierarchy, or Apple-native interaction patterns.
 version: 1.0.0
-author: ksanbal + Hermes Agent
+author: Ksanbal
 license: CC-BY-4.0
 metadata:
   priority: 8

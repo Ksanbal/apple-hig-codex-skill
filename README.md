@@ -1,6 +1,6 @@
-# Apple HIG Codex Skill
+# Apple HIG Skill for Codex, Claude Code, and OpenCode
 
-Apple Human Interface Guidelines(HIG)를 Codex와 Hermes에서 재사용할 수 있도록 만든 portable skill/plugin 패키지입니다.
+Apple Human Interface Guidelines(HIG)를 **Codex**, **Claude Code**, **OpenCode**에서 재사용할 수 있도록 만든 portable skill/plugin 패키지입니다.
 
 - 공식 HIG: https://developer.apple.com/kr/design/human-interface-guidelines/
 - 대상 플랫폼: iOS, iPadOS, macOS, watchOS, tvOS, visionOS
@@ -8,11 +8,21 @@ Apple Human Interface Guidelines(HIG)를 Codex와 Hermes에서 재사용할 수 
 
 > 이 저장소의 skill은 Apple 공식 문서의 핵심 원칙과 실무 체크리스트를 압축한 보조 자료입니다. 정확한 최신 수치, 플랫폼별 세부 정책, SDK 동작은 항상 Apple 공식 문서를 확인하세요.
 
+## 지원 도구
+
+| 도구 | 설치 방식 | 설치 위치 |
+|---|---|---|
+| Codex | local plugin marketplace 등록 | `~/.codex/config.toml` + 이 repo |
+| Claude Code | global skill 복사 | `~/.claude/skills/apple-human-interface-guidelines/SKILL.md` |
+| OpenCode | global skill 복사 | `~/.config/opencode/skills/apple-human-interface-guidelines/SKILL.md` |
+
 ## 포함된 내용
 
 ```text
 .
 ├── README.md
+├── LICENSE
+├── CONTRIBUTING.md
 ├── install.sh
 ├── .agents/plugins/marketplace.json
 └── plugins/apple-hig/
@@ -33,11 +43,9 @@ Apple Human Interface Guidelines(HIG)를 Codex와 Hermes에서 재사용할 수 
 - Navigation, controls, feedback, permission, privacy 패턴
 - Dynamic Type, VoiceOver, Reduce Motion, contrast 등 접근성 체크리스트
 - SwiftUI/UIKit/AppKit 구현 시 확인할 사항
-- Codex에서 바로 사용할 수 있는 prompt 예시
+- Codex/Claude Code/OpenCode에서 바로 사용할 수 있는 prompt 예시
 
 ## 빠른 설치
-
-### Codex + Hermes 모두 설치
 
 ```bash
 git clone https://github.com/Ksanbal/apple-hig-codex-skill.git ~/.agents/apple-hig-codex-skill
@@ -45,7 +53,7 @@ cd ~/.agents/apple-hig-codex-skill
 ./install.sh
 ```
 
-설치 후에는 **새 Codex/Hermes 세션을 시작**해야 skill이 로드됩니다.
+설치 후에는 **새 Codex, Claude Code, OpenCode 세션을 시작**해야 skill이 로드됩니다.
 
 ## Codex에서 사용하기
 
@@ -72,30 +80,44 @@ Use the apple-human-interface-guidelines skill. Review this app for iOS/iPadOS H
 Use the apple-human-interface-guidelines skill. Refactor this SwiftUI screen to use native Apple components, Dynamic Type, semantic colors, VoiceOver labels, and adaptive iPhone/iPad layout.
 ```
 
-```text
-Use the apple-human-interface-guidelines skill. Create an Apple HIG checklist for this product before implementation. Include iPhone, iPad, macOS, and visionOS considerations where relevant.
-```
+## Claude Code에서 사용하기
 
-## Hermes에서 사용하기
-
-`install.sh`는 같은 `SKILL.md`를 Hermes local skill 폴더에도 복사합니다.
-
-기본 설치 위치:
+`install.sh`는 skill을 Claude Code global skill 폴더에 복사합니다.
 
 ```bash
-~/.hermes/skills/design/apple-human-interface-guidelines/SKILL.md
+~/.claude/skills/apple-human-interface-guidelines/SKILL.md
 ```
 
-Hermes 새 세션에서 명시적으로 로드:
+새 Claude Code 세션에서 다음처럼 요청하세요.
 
 ```text
-/skill apple-human-interface-guidelines
+Use the apple-human-interface-guidelines skill. Review this app for Apple HIG alignment and suggest concrete UI fixes.
 ```
 
-또는 CLI 시작 시 preload:
+Print mode에서도 사용할 수 있습니다.
 
 ```bash
-hermes -s apple-human-interface-guidelines
+claude -p "Use the apple-human-interface-guidelines skill. Review the current SwiftUI app for HIG alignment." --max-turns 5
+```
+
+## OpenCode에서 사용하기
+
+`install.sh`는 skill을 OpenCode global skill 폴더에 복사합니다.
+
+```bash
+~/.config/opencode/skills/apple-human-interface-guidelines/SKILL.md
+```
+
+새 OpenCode 세션에서 다음처럼 요청하세요.
+
+```text
+Use the apple-human-interface-guidelines skill. Review this app for iOS, iPadOS, and macOS design consistency.
+```
+
+One-shot 실행 예시:
+
+```bash
+opencode run "Use the apple-human-interface-guidelines skill. Review this SwiftUI project for HIG alignment."
 ```
 
 ## 여러 기기에서 사용하기
@@ -131,12 +153,20 @@ codex plugin marketplace add ~/.agents/apple-hig-codex-skill
 enabled = true
 ```
 
-### Hermes만 수동 설치
+### Claude Code만 수동 설치
 
 ```bash
-mkdir -p ~/.hermes/skills/design/apple-human-interface-guidelines
+mkdir -p ~/.claude/skills/apple-human-interface-guidelines
 cp plugins/apple-hig/skills/apple-human-interface-guidelines/SKILL.md \
-  ~/.hermes/skills/design/apple-human-interface-guidelines/SKILL.md
+  ~/.claude/skills/apple-human-interface-guidelines/SKILL.md
+```
+
+### OpenCode만 수동 설치
+
+```bash
+mkdir -p ~/.config/opencode/skills/apple-human-interface-guidelines
+cp plugins/apple-hig/skills/apple-human-interface-guidelines/SKILL.md \
+  ~/.config/opencode/skills/apple-human-interface-guidelines/SKILL.md
 ```
 
 ## 업데이트 방법
@@ -182,6 +212,14 @@ assert fm['name'] == 'apple-human-interface-guidelines'
 assert 'description' in fm and len(fm['description']) <= 1024
 print('OK')
 PY
+```
+
+### 설치 위치 확인
+
+```bash
+test -f ~/.claude/skills/apple-human-interface-guidelines/SKILL.md && echo "Claude Code skill OK"
+test -f ~/.config/opencode/skills/apple-human-interface-guidelines/SKILL.md && echo "OpenCode skill OK"
+grep -q 'apple-hig@local-apple-design-skills' ~/.codex/config.toml && echo "Codex plugin OK"
 ```
 
 ## 라이선스
